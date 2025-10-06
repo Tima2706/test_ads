@@ -1,10 +1,10 @@
-🏷️ Ads Board SPA (Nuxt 3 + TypeScript)
+🏷️ Ads Board SPA (Nuxt 4 + TypeScript)
 
 A responsive single-page web application that displays and filters ads, supports offline mode, and uses AI-generated ad content.
 
 🚀 Tech Stack
 
-Framework: Nuxt 3
+Framework: Nuxt 4
 
 Language: TypeScript
 

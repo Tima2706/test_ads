@@ -86,7 +86,7 @@ export const useAdsStore = defineStore('ads', () => {
         });
     });
 
-    const generateAds = (count = 10) => {
+    const generateAds = (count = 1) => {
         const newAds: Ad[] = [];
         for (let i = 0; i < count; i++) {
             newAds.push({
@@ -102,6 +102,10 @@ export const useAdsStore = defineStore('ads', () => {
             });
         }
         ads.push(...newAds);
+        if (process.client) {
+            const { $toast } = useNuxtApp()
+            $toast.success(`${count} new ad(s) generated!`)
+        }
     };
 
     const updateStatus = (id: string, status: 'active' | 'pending') => {

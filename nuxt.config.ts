@@ -6,8 +6,8 @@ export default defineNuxtConfig({
         '@vite-pwa/nuxt',
         'nuxt-icon',
     ],
-    ui: {
-        icons: ['heroicons', 'mdi']
+    icon: {
+        collections: ['heroicons', 'mdi']
     },
     css: ['~/assets/css/main.css'],
     pwa: {
@@ -24,9 +24,9 @@ export default defineNuxtConfig({
         },
         client: {
             installPrompt: true,
-            navigateFallback: '/',
-            registerServiceWorkerInDev: true
+            periodicSyncForUpdates: 3600
         },
+
         manifest: {
             name: 'AdBrowser',
             short_name: 'Ads',

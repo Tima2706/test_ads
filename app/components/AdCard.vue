@@ -1,5 +1,10 @@
 <template>
-  <UCard class="bg-white" @click="$emit('open-modal', ad)">
+  <UCard :ui="{
+      root: 'rounded-xl bg-white p-2',
+      header: 'text-2xl font-bold text-red-800',
+      body: 'text-gray-700',
+      footer: 'flex justify-end mt-4'
+    }"  @click="$emit('open-modal', ad)">
     <div class="flex justify-between items-start mb-2">
       <h3 class="font-semibold text-lg">{{ ad.title }}</h3>
       <UBadge :color="ad.status === 'active' ? 'green' : 'yellow'" data-testid="ad-status">{{ ad.status }}</UBadge>

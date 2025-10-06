@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Ad List', () => {
     beforeEach(() => {
         cy.visit('/');
@@ -11,7 +13,10 @@ describe('Ad List', () => {
 
     it('persists offline changes', () => {
         cy.window().then((win) => {
-            win.navigator.onLine = false;
+            Object.defineProperty(win.navigator, 'onLine', {
+                configurable: true,
+                value: false,
+            });
         });
         cy.get('[data-testid="toggle-status"]').first().click();
         cy.get('[data-testid="ad-status"]').first().should('contain', 'pending');
@@ -21,7 +26,7 @@ describe('Ad List', () => {
 
     it('opens modal and adds comment', () => {
         cy.get('[data-testid="ad-card"]').first().click();
-        cy.get('[data-testid^="ad-modal-"]').should('be.visible');
+        cy.get('[data-testid^="ad-modal"]').should('be.visible');
         cy.get('textarea[placeholder*="comment"]').type('Test comment');
         cy.get('button:contains("Submit")').click();
         cy.contains('Test comment').should('be.visible');

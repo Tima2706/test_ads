@@ -1,0 +1,8 @@
+/* assets/css/main.css */
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+/*@layer components {*/
+/*    .ad-card { @apply bg-white rounded-lg shadow-md p-4 border; }*/
+/*    .offline-banner { @apply fixed top-0 left-0 right-0 bg-yellow-500 text-white p-2 text-center z-50; }*/
+/*}*/
